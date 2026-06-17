@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Home - WEBSITE  RANDOM</title>
+</head>
+<body>
+    <header>
+        <h1>WEBSITE RANDOM</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/home_image.jpg') }}" alt="Home Image" class="responsive-image">
+            <h2>Welcome!</h2>
+            <p>Halo, Sobat! 🎉 Selamat datang di Website Serba Ada, tempat di mana segala hal bisa kamu temukan
+                kecuali mungkin mantan yang hilang.</p>
+            <!-- Tombol yang diarahkan ke halaman About -->
+            <button onclick="window.location.href='{{ url_for('about') }}'">Click Me!</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Awesome Flask App</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>About - Website Serba Ada</title>
+    <style>
+        .clickable-box {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Kotak Fakta Dunia dengan warna biru */
+        .fakta-box {
+            background-color: #a3c8f0;
+            border: 2px solid #89b6e0;
+        }
+
+        /* Kotak Kutipan Inspiratif dengan warna hijau */
+        .kutipan-box {
+            background-color: #c8f0a3;
+            border: 2px solid #8abf6e;
+        }
+
+        /* Kotak Dokumentasi PPI dengan warna oranye */
+        .dokumen-box {
+            background-color: #f0d0a3;
+            border: 2px solid #e0a85b;
+        }
+
+        .clickable-box:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        .clickable-box h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .clickable-box p {
+            font-size: 1.2em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Selamat Datang di Halaman About!</h2>
+            <p>Kami di sini untuk berbagi hal-hal menarik yang mungkin belum kamu ketahui. Yuk, jelajahi dunia dengan fakta-fakta seru dan inspirasi yang bisa bikin harimu lebih berwarna!</p>
+
+            <!-- Kotak Klikable untuk Fakta Dunia -->
+            <section class="clickable-box fakta-box" onclick="window.location.href='{{ url_for('fakta_dunia') }}'">
+                <h3>🌍 Fakta Unik Dunia</h3>
+                <p>Klik untuk mengetahui fakta-fakta menarik tentang dunia kita!</p>
+            </section>
+
+            <!-- Kotak Klikable untuk Kutipan Inspiratif -->
+            <section class="clickable-box kutipan-box" onclick="window.location.href='{{ url_for('kutipan_inspiratif') }}'">
+                <h3>✨ Kutipan Inspiratif</h3>
+                <p>Klik untuk mendapatkan kutipan yang bisa menginspirasimu!</p>
+            </section>
+
+            <!-- Kotak Klikable untuk Dokumentasi PPI -->
+            <section class="clickable-box dokumen-box" onclick="window.location.href='{{ url_for('ide_kreatif') }}'">
+                <h3>📚 Dokumentasi PPI (Pemrograman Internet)</h3>
+                <p>Klik untuk mengeksplorasi ide-ide kreatif yang bisa kamu coba!</p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Awesome Flask App</p>
+    </footer>
+</body>
+</html>
